@@ -146,7 +146,6 @@ public class PetControllerTest {
 	            .andExpect(status().isCreated());
 	            
 		String response = mvcActions.andReturn().getResponse().getContentAsString();
-
 		Integer id = JsonPath.parse(response).read("$.id");
 
         mockMvc.perform(delete("/pets/" + id ))
